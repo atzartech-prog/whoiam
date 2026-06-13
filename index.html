@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who I Am | The Tinkerer's Playground</title>
+    <meta name="description" content="Welcome to the digital corner of a self-proclaimed tech wizard, retro gadget hoarder, and professional tinkerer.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Background grid texture -->
+    <div class="bg-grid"></div>
+
+    <div class="profile-container">
+        <!-- Navigation / Header Bar -->
+        <nav class="nav-bar">
+            <a href="../homepage/index.html" class="back-link">
+                <i data-lucide="arrow-left"></i> Back to Hub
+            </a>
+            <div class="status-pill">
+                <span class="pulse-dot"></span> Currently: Tinkering on old Nokia phones
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <div class="avatar-area">
+                <div class="avatar-frame">
+                    <span class="avatar-emoji">📟</span>
+                </div>
+                <div class="sticker badge-1">Tinkerer</div>
+                <div class="sticker badge-2">DIY Fan</div>
+            </div>
+            
+            <h1 class="hero-title">Hey there, I'm <span>Atzar</span>!</h1>
+            <p class="hero-subtitle">
+                A self-proclaimed tech wizard, retro gadget hoarder, and professional tinkerer. I write code, break electronics, and try to put them back together (mostly successfully!).
+            </p>
+            
+            <div class="sticker-wall">
+                <span class="tag-sticker"><i data-lucide="wrench"></i> Hardware Hacker</span>
+                <span class="tag-sticker"><i data-lucide="code"></i> JS Lover</span>
+                <span class="tag-sticker"><i data-lucide="coffee"></i> Coffee Powered</span>
+                <span class="tag-sticker"><i data-lucide="book-open"></i> Constant Learner</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="profile-main">
+            <!-- Hobbies & Passion Section -->
+            <section class="section">
+                <h2 class="section-title"><i data-lucide="heart" class="title-icon"></i> What Keeps My Brain Buzzing</h2>
+                <div class="hobbies-grid">
+                    <!-- Hobby 1: DIY -->
+                    <div class="hobby-card" data-color="violet">
+                        <div class="hobby-icon-box">
+                            <i data-lucide="hammer"></i>
+                        </div>
+                        <h3>DIY Projects</h3>
+                        <p>Building things from scratch! Solder fumes, hot glue, wood shards, and a tiny bit of magic. If I can build it instead of buying it, I will (even if it costs twice as much!).</p>
+                        <div class="hobby-tags">
+                            <span>#solder</span><span>#makers Gonna Make</span><span>#electronics</span>
+                        </div>
+                    </div>
+
+                    <!-- Hobby 2: Reading -->
+                    <div class="hobby-card" data-color="emerald">
+                        <div class="hobby-icon-box">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <h3>Bookworm Mode</h3>
+                        <p>Consuming books, tech articles, and deep-dive wikis. Yes, I actually read the manuals! Fiction, non-fiction, or just standard datasheets – reading is my brain fuel.</p>
+                        <div class="hobby-tags">
+                            <span>#books</span><span>#manuals</span><span>#always Reading</span>
+                        </div>
+                    </div>
+
+                    <!-- Hobby 3: Old Gadgets -->
+                    <div class="hobby-card" data-color="amber">
+                        <div class="hobby-icon-box">
+                            <i data-lucide="hard-drive"></i>
+                        </div>
+                        <h3>Old Gadgets Retro Love</h3>
+                        <p>Resurrecting vintage cellphones, old GameBoys, PDA organizers, and retro calculators. There is a special kind of beauty in low-resolution monochrome LCD screens and tactile clicky buttons.</p>
+                        <div class="hobby-tags">
+                            <span>#retroTech</span><span>#gameboy</span><span>#nokiaLife</span>
+                        </div>
+                    </div>
+
+                    <!-- Hobby 4: Thinkering -->
+                    <div class="hobby-card" data-color="rose">
+                        <div class="hobby-icon-box">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <h3>Thinkering</h3>
+                        <p>Opening up gadgets just to see how they work. Sometimes they go back together, sometimes they become "spare parts". I live to modify, flashing custom ROMs and hacking software configs.</p>
+                        <div class="hobby-tags">
+                            <span>#hacking</span><span>#underTheHood</span><span>#oopsLeftoverScrews</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Terminal Console Widget -->
+            <section class="section">
+                <h2 class="section-title"><i data-lucide="terminal" class="title-icon"></i> The Tinkerer's Terminal</h2>
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="terminal-title">atzar@thinkering-os:~</span>
+                    </div>
+                    <div class="terminal-body" id="terminalBody">
+                        <p class="term-line"><span class="term-prompt">atzar@thinkering-os:~$</span> cat welcome.txt</p>
+                        <p class="term-output text-glow">Hello! Type one of the buttons below to interact with my terminal shell. Let's see what happens!</p>
+                    </div>
+                    <div class="terminal-controls">
+                        <button class="term-btn" onclick="runCommand('skills')">
+                            <i data-lucide="terminal"></i> system-check
+                        </button>
+                        <button class="term-btn" onclick="runCommand('gadget')">
+                            <i data-lucide="radio"></i> scan-retro-freq
+                        </button>
+                        <button class="term-btn" onclick="runCommand('coffee')">
+                            <i data-lucide="coffee"></i> brew-coffee
+                        </button>
+                        <button class="term-btn clear" onclick="runCommand('clear')">
+                            <i data-lucide="trash-2"></i> clear
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Grid (Mini Gallery) -->
+            <section class="section">
+                <h2 class="section-title"><i data-lucide="layout" class="title-icon"></i> My Digital Toyshop</h2>
+                <p class="section-subtitle">Here are a few quick links to web apps I've built. Click to play!</p>
+                <div class="mini-projects-grid">
+                    <a href="../note/" target="_blank" class="mini-project-card">
+                        <div class="mp-icon"><i data-lucide="file-text"></i></div>
+                        <div class="mp-content">
+                            <h4>Note App</h4>
+                            <p>Markdown powered quick notes.</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="mp-arrow"></i>
+                    </a>
+                    
+                    <a href="../app-launcher/" target="_blank" class="mini-project-card">
+                        <div class="mp-icon"><i data-lucide="rocket"></i></div>
+                        <div class="mp-content">
+                            <h4>App Launcher</h4>
+                            <p>Unified quick portal dashboard.</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="mp-arrow"></i>
+                    </a>
+
+                    <a href="../masjid-digital-signage/" target="_blank" class="mini-project-card">
+                        <div class="mp-icon"><i data-lucide="monitor"></i></div>
+                        <div class="mp-content">
+                            <h4>Masjid Signage</h4>
+                            <p>Digital prayer timings & billboard.</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="mp-arrow"></i>
+                    </a>
+
+                    <a href="../alatbantukerja/" target="_blank" class="mini-project-card">
+                        <div class="mp-icon"><i data-lucide="briefcase"></i></div>
+                        <div class="mp-content">
+                            <h4>Alat Bantu Kerja</h4>
+                            <p>Indonesian administrative helper tools.</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="mp-arrow"></i>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="profile-footer">
+            <p>Made with ⚡, hot glue, and code. Let's make cool stuff.</p>
+            <p class="copyright">&copy; 2026 Atzartech. All rights, wrongs, and screws reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
