@@ -12,6 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) {
         window.lucide.createIcons();
     }
+
+    // 3. Easter Egg Key Listener
+    let typedBuffer = '';
+    document.addEventListener('keydown', (event) => {
+        if (event.key && event.key.length === 1) {
+            typedBuffer += event.key.toLowerCase();
+            if (typedBuffer.length > 15) {
+                typedBuffer = typedBuffer.substring(typedBuffer.length - 15);
+            }
+            if (typedBuffer.endsWith('tamyis')) {
+                triggerEasterEgg();
+                typedBuffer = '';
+            }
+        }
+    });
 });
 
 /**
@@ -103,4 +118,35 @@ function getCommandName(cmd) {
         case 'coffee': return 'brew-coffee';
         default: return cmd;
     }
+}
+
+/**
+ * Decrypts and shows the easter egg
+ */
+function triggerEasterEgg() {
+    const terminalBody = document.getElementById('terminalBody');
+    if (!terminalBody) return;
+
+    // Add prompt line
+    const promptLine = document.createElement('p');
+    promptLine.className = 'term-line';
+    promptLine.innerHTML = `<span class="term-prompt">atzar@thinkering-os:~$</span> decrypt-secret-vault`;
+    terminalBody.appendChild(promptLine);
+
+  
+    const encryptedCodes = [121, 102, 114, 126, 110, 120, 37, 102, 113, 110];
+    const decrypted = encryptedCodes.map(code => String.fromCharCode(code - 5)).join('');
+
+    // Add output lines
+    const outputLine = document.createElement('p');
+    outputLine.className = 'term-output text-glow';
+    outputLine.style.color = '#38bdf8'; // sky blue glow
+    outputLine.innerHTML = `🔐 Decrypting secret modules...<br>
+[+] Key matched: Secret Signature Found<br>
+[+] Decrypted string: <strong>${decrypted}</strong><br>
+>> SYSTEM OVERRIDE SUCCESSFUL. Hello, ${decrypted}! 🚀`;
+    terminalBody.appendChild(outputLine);
+
+    // Scroll to bottom of terminal
+    terminalBody.scrollTop = terminalBody.scrollHeight;
 }

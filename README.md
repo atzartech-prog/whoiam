@@ -93,3 +93,8 @@ The *"My Digital Toyshop"* section links to sibling directories. If you want to 
 
 Simply open **`index.html`** in any web browser by double-clicking the file.
 If you deploy this project to GitHub Pages (e.g., to the `whoiam` repository under your username), it will sync perfectly with your welcome hub!
+
+---
+
+*P.S. There is a hidden signature encrypted within the terminal logic. Try typing the developer's favorite key phrase somewhere on the page to unlock it...*
+
